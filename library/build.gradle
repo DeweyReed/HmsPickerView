@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'kotlin-android'
+
 android {
     compileSdkVersion compile_sdk
     defaultConfig {
@@ -7,10 +9,13 @@ android {
         targetSdkVersion target_sdk
         versionCode version_code
         versionName version_name
+        vectorDrawables.useSupportLibrary true
     }
-    resourcePrefix 'hv_'
+    resourcePrefix 'hpv_'
 }
 
 dependencies {
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
 }

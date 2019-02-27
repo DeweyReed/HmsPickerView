@@ -11,4 +11,9 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <xyz.aprildown.hmspickerview.HmsPickerView
+        android:id="@+id/hmsPickerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

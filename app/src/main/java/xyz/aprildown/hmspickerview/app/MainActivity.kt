@@ -1,4 +1,4 @@
-package xyz.aprildown.hmsview.app
+package xyz.aprildown.hmspickerview.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

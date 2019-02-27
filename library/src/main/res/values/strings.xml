@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!--TODO: These values has more variations for languages-->
+
+    <!-- Describes the purpose of the button to delete something. -->
+    <string name="hpv_delete">Delete</string>
+
+    <!-- Talkback description for deleting a number. -->
+    <string name="hpv_delete_number">Delete <xliff:g id="number_string">%s</xliff:g></string>
+
+    <!-- Abbreviation for temporal hours [CHAR LIMIT=1] -->
+    <string name="hpv_hours_label">h</string>
+    <!-- Abbreviation for temporal minutes [CHAR LIMIT=1] -->
+    <string name="hpv_minutes_label">m</string>
+    <!-- Abbreviation for temporal seconds [CHAR LIMIT=1] -->
+    <string name="hpv_seconds_label">s</string>
+
+    <!-- Accessibility description for new timer setup duration (e.g. 1 hour, 10 minutes, 30 seconds). [CHAR LIMIT=NONE] -->
+    <string name="hpv_time_description"><xliff:g example="1 hour" id="hours">%1$s</xliff:g>, <xliff:g example="15 minutes" id="minutes">%2$s</xliff:g>, <xliff:g example="30 seconds" id="seconds">%3$s</xliff:g></string>
+
+    <!-- Alarm confirmation toast, timer notification and world clock ahead/behind: hours -->
+    <plurals name="hpv_hours">
+        <!-- Duration for one hour -->
+        <item quantity="one">1 hour</item>
+        <!-- Duration for more than one hour -->
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> hours</item>
+    </plurals>
+
+    <!-- Alarm confirmation toast and timer notification: minutes -->
+    <plurals name="hpv_minutes">
+        <!-- Duration for one minute -->
+        <item quantity="one">1 minute</item>
+        <!-- Duration for more than one minute -->
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> minutes</item>
+    </plurals>
+
+    <!-- Timer accessibility announcement -->
+    <plurals name="hpv_seconds">
+        <!-- Duration for one second -->
+        <item quantity="one">1 second</item>
+        <!-- Duration for more than one minute -->
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> seconds</item>
+    </plurals>
+
+</resources>

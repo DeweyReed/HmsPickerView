@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TODO: This value has more variations for tablets-->
+    <dimen name="hpv_digit_font_size">32sp</dimen>
+
+    <!--TODO: This value has more variations for tablets-->
+    <!--margin should be ~ half timer_setup_font_size -->
+    <dimen name="hpv_delete_margin">14sp</dimen>
+
+    <!--TODO: This value has more variations for tablets-->
+    <dimen name="hpv_backspace_icon_size">24dp</dimen>
+</resources>
