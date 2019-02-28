@@ -1,3 +1,21 @@
+@file:Suppress("MemberVisibilityCanBePrivate", "unused")
+
+/*
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package xyz.aprildown.hmspickerview
 
 import android.content.Context
@@ -17,13 +35,26 @@ import androidx.annotation.IdRes
 import androidx.core.view.ViewCompat
 import java.util.*
 
+/**
+ * A custom view to pick hours, minutes and seconds.
+ * Inspired by and optimized from AOSP DeskClock com.android.deskclock.timer.TimerSetupView.
+ */
 class HmsPickerView(
     context: Context,
     attrs: AttributeSet? = null
 ) : LinearLayout(context, attrs), View.OnClickListener, View.OnLongClickListener {
 
     interface Listener {
+        /**
+         * Indicates [HmsPickerView] now has an valid input(anything except 00h 00m 00s).
+         * This methods can be used to allow user to go forward (such as enabling "next" button).
+         */
         fun onHmsPickerViewHasValidInput(hmsPickerView: HmsPickerView)
+
+        /**
+         * Indicates [HmsPickerView]'s input becomes 00h 00m 00s.
+         * This methods can be used to prevent user from going forward(such as disabling "next" button).
+         */
         fun onHmsPickerViewHasNoInput(hmsPickerView: HmsPickerView)
     }
 
@@ -258,6 +289,9 @@ class HmsPickerView(
         }
     }
 
+    /**
+     * Set time to 00h 00m 00s.
+     */
     fun reset() {
         if (inputPointer != -1) {
             Arrays.fill(input, 0)
@@ -267,16 +301,35 @@ class HmsPickerView(
         }
     }
 
+    /**
+     * Set a listener to listen if the [HmsPickerView] has or loses a valid input.
+     */
     fun setListener(l: HmsPickerView.Listener) {
         listener = l
     }
 
+    /**
+     * Get current seconds.
+     * @return 0 ~ 99 seconds.
+     */
     fun getSeconds(): Int = input[1] * 10 + input[0]
 
+    /**
+     * Get current minutes.
+     * @return 0 ~ 99 minutes.
+     */
     fun getMinutes(): Int = input[3] * 10 + input[2]
 
+    /**
+     * Get current hours.
+     * @return 0 ~ 99 hours.
+     */
     fun getHours(): Int = input[5] * 10 + input[4]
 
+    /**
+     * Get current time in milliseconds.
+     * @return 0 ~  99 hours 99 minutes 99 seconds in milliseconds.
+     */
     fun getTimeInMillis(): Long =
         getSeconds() * DateUtils.SECOND_IN_MILLIS +
                 getMinutes() * DateUtils.MINUTE_IN_MILLIS +
