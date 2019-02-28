@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="hpv_delete_margin">12sp</dimen>
+
+    <dimen name="hpv_digit_font_size">24sp</dimen>
 </resources>
