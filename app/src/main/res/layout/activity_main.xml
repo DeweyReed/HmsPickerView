@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnDialog"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dialog" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <xyz.aprildown.hmspickerview.HmsPickerView
-        android:id="@+id/hmsPickerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
-</LinearLayout>
+
+        <Button
+            android:id="@+id/btnNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Night Mode" />
+
+        <Button
+            android:id="@+id/btnDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dialog" />
+
+        <xyz.aprildown.hmspickerview.HmsPickerView
+            android:id="@+id/hmsPickerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</ScrollView>
