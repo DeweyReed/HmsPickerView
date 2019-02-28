@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hpv_delete_margin">21sp</dimen>
+    <dimen name="hpv_backspace_icon_size">32dp</dimen>
+</resources>

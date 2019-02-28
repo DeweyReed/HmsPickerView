@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!--TODO: These values has more variations for languages-->
-
     <!-- Describes the purpose of the button to delete something. -->
     <string name="hpv_delete">Delete</string>
 

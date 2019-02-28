@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="hpv_delete">حذف</string>
+
+    <string name="hpv_delete_number">"حذف <xliff:g id="NUMBER_STRING">%s</xliff:g>"</string>
+
+    <string name="hpv_hours_label">س</string>
+    <string name="hpv_minutes_label">د</string>
+    <string name="hpv_seconds_label">ث</string>
+
+    <string name="hpv_time_description"><xliff:g id="HOURS">%1$s</xliff:g>، <xliff:g id="MINUTES">%2$s</xliff:g>، <xliff:g id="SECONDS">%3$s</xliff:g></string>
+
+    <plurals name="hpv_hours">
+        <item quantity="zero"><xliff:g id="NUMBER">%s</xliff:g> من الساعات</item>
+        <item quantity="two">ساعتان (<xliff:g id="NUMBER">%s</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> ساعات</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> ساعة</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> من الساعات</item>
+        <item quantity="one">ساعة واحدة</item>
+    </plurals>
+
+    <plurals name="hpv_minutes">
+        <item quantity="zero"><xliff:g id="NUMBER">%s</xliff:g> من الدقائق</item>
+        <item quantity="two">دقيقتان (<xliff:g id="NUMBER">%s</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> دقائق</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> دقيقة</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> من الدقائق</item>
+        <item quantity="one">دقيقة واحدة</item>
+    </plurals>
+
+    <plurals name="hpv_seconds">
+        <item quantity="zero"><xliff:g id="NUMBER">%s</xliff:g> ثانية</item>
+        <item quantity="two">ثانيتان (<xliff:g id="NUMBER">%s</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> ثوانٍ</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> ثانية</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> ثانية</item>
+        <item quantity="one">ثانية واحدة</item>
+    </plurals>
+</resources>

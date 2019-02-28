@@ -54,9 +54,9 @@ class HmsPickerView(
             bf.unicodeWrap("^1"),
             bf.unicodeWrap("^2"),
             bf.unicodeWrap("^3"),
-            formatText(hoursLabel, RelativeSizeSpan(0.5f)),
-            formatText(minutesLabel, RelativeSizeSpan(0.5f)),
-            formatText(secondsLabel, RelativeSizeSpan(0.5f))
+            formatText(hoursLabel, RelativeSizeSpan(0.3f)),
+            formatText(minutesLabel, RelativeSizeSpan(0.3f)),
+            formatText(secondsLabel, RelativeSizeSpan(0.3f))
         )
 
         LayoutInflater.from(context).inflate(R.layout.hpv_view, this)

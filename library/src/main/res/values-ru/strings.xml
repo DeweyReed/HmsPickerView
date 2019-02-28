@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="hpv_delete">Удалить</string>
+
+    <string name="hpv_delete_number">Удалить <xliff:g id="NUMBER_STRING">%s</xliff:g></string>
+
+    <string name="hpv_hours_label">ч.</string>
+    <string name="hpv_minutes_label">м.</string>
+    <string name="hpv_seconds_label">с.</string>
+
+    <string name="hpv_time_description"><xliff:g id="HOURS">%1$s</xliff:g>, <xliff:g id="MINUTES">%2$s</xliff:g>, <xliff:g id="SECONDS">%3$s</xliff:g></string>
+
+    <plurals name="hpv_hours">
+        <item quantity="one"><xliff:g id="NUMBER">%s</xliff:g> час</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> часа</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> часов</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> часа</item>
+    </plurals>
+
+    <plurals name="hpv_minutes">
+        <item quantity="one"><xliff:g id="NUMBER">%s</xliff:g> минута</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> минуты</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> минут</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> минуты</item>
+    </plurals>
+
+    <plurals name="hpv_seconds">
+        <item quantity="one"><xliff:g id="NUMBER">%s</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g id="NUMBER">%s</xliff:g> секунды</item>
+        <item quantity="many"><xliff:g id="NUMBER">%s</xliff:g> секунд</item>
+        <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> секунды</item>
+    </plurals>
+
+</resources>
