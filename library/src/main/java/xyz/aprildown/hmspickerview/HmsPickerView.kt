@@ -21,6 +21,8 @@ package xyz.aprildown.hmspickerview
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
+import android.os.Parcel
+import android.os.Parcelable
 import android.text.BidiFormatter
 import android.text.TextUtils
 import android.text.format.DateUtils
@@ -33,6 +35,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.IdRes
 import androidx.core.view.ViewCompat
+import androidx.customview.view.AbsSavedState
 import java.util.*
 
 /**
@@ -301,6 +304,24 @@ class HmsPickerView(
         }
     }
 
+    override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        val ss = if (superState == null) SavedState() else SavedState(superState)
+        ss.timeInMills = getTimeInMillis()
+        return ss
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        val ss = state as SavedState
+
+        super.onRestoreInstanceState(ss.superState)
+
+        val newTime = ss.timeInMills
+        if (newTime > 0) {
+            setTimeInMillis(newTime)
+        }
+    }
+
     /**
      * Set a listener to listen if the [HmsPickerView] has or loses a valid input.
      */
@@ -334,4 +355,100 @@ class HmsPickerView(
         getSeconds() * DateUtils.SECOND_IN_MILLIS +
                 getMinutes() * DateUtils.MINUTE_IN_MILLIS +
                 getHours() * DateUtils.HOUR_IN_MILLIS
+
+    /**
+     * Set current hours. Minutes and seconds stay the same.
+     */
+    fun setHours(hours: Int) {
+        setTimeInMillis(
+            getSeconds() * DateUtils.SECOND_IN_MILLIS +
+                    getMinutes() * DateUtils.MINUTE_IN_MILLIS +
+                    hours * DateUtils.HOUR_IN_MILLIS
+        )
+    }
+
+    /**
+     * Set current minutes. Hours and seconds stay the same.
+     */
+    fun setMinutes(minutes: Int) {
+        setTimeInMillis(
+            getSeconds() * DateUtils.SECOND_IN_MILLIS +
+                    minutes * DateUtils.MINUTE_IN_MILLIS +
+                    getHours() * DateUtils.HOUR_IN_MILLIS
+        )
+    }
+
+    /**
+     * Set seconds hours. Hours and minutes stay the same.
+     */
+    fun setSeconds(seconds: Int) {
+        setTimeInMillis(
+            seconds * DateUtils.SECOND_IN_MILLIS +
+                    getMinutes() * DateUtils.MINUTE_IN_MILLIS +
+                    getHours() * DateUtils.HOUR_IN_MILLIS
+        )
+    }
+
+    /**
+     * Set current time in milliseconds.
+     */
+    fun setTimeInMillis(time: Long) {
+        var remaining = time
+
+        val hours = (remaining / DateUtils.HOUR_IN_MILLIS).toInt()
+        remaining %= DateUtils.HOUR_IN_MILLIS
+
+        val minutes = (remaining / DateUtils.MINUTE_IN_MILLIS).toInt()
+        remaining %= DateUtils.MINUTE_IN_MILLIS
+
+        val seconds = (remaining / DateUtils.SECOND_IN_MILLIS).toInt()
+
+        val newInput = intArrayOf(
+            seconds % 10, seconds / 10,
+            minutes % 10, minutes / 10,
+            hours % 10, hours / 10
+        )
+
+        val size = input.size
+
+        System.arraycopy(newInput, 0, input, 0, size)
+
+        val firstNonZeroPos = newInput.reversed().indexOfFirst { it != 0 }
+        // Magic formula
+        inputPointer = if (firstNonZeroPos == -1) -1 else size - firstNonZeroPos - 1
+
+        updateTime()
+        updateDeleteAndDivider()
+    }
+
+    private class SavedState : AbsSavedState {
+
+        var timeInMills: Long = 0L
+
+        constructor() : super(Parcel.obtain())
+        constructor(superState: Parcelable) : super(superState)
+
+        constructor(source: Parcel) : this(source, null)
+        constructor(source: Parcel, loader: ClassLoader?) : super(source, loader) {
+            timeInMills = source.readLong()
+        }
+
+        override fun writeToParcel(dest: Parcel?, flags: Int) {
+            super.writeToParcel(dest, flags)
+            dest?.writeLong(timeInMills)
+        }
+
+        companion object {
+            @JvmField
+            val CREATOR = object : Parcelable.Creator<SavedState> {
+                override fun createFromParcel(parcel: Parcel): SavedState {
+                    return SavedState(parcel)
+                }
+
+                override fun newArray(size: Int): Array<SavedState?> {
+                    return arrayOfNulls(size)
+                }
+            }
+        }
+    }
 }

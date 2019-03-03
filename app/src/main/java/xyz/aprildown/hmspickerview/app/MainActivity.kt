@@ -45,5 +45,11 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         }
+
+        hmsPickerView2.run {
+            setSeconds(12)
+            setMinutes(30)
+            setHours(9)
+        }
     }
 }
