@@ -66,10 +66,10 @@ class HmsPickerView(
     private var inputPointer = -1
     private val timeTemplate: CharSequence
 
-    private lateinit var timeView: TextView
-    private lateinit var deleteView: View
-    private lateinit var dividerView: View
-    private lateinit var digitViews: Array<TextView>
+    private val timeView: TextView
+    private val deleteView: View
+    private val dividerView: View
+    private val digitViews: Array<TextView>
 
     private val hasValidInput: Boolean
         get() = inputPointer != -1
@@ -94,10 +94,6 @@ class HmsPickerView(
         )
 
         LayoutInflater.from(context).inflate(R.layout.hpv_view, this)
-    }
-
-    override fun onFinishInflate() {
-        super.onFinishInflate()
 
         timeView = findViewById(R.id.timer_setup_time)
         deleteView = findViewById(R.id.timer_setup_delete)
