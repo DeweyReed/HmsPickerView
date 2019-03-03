@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_1"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -18,7 +18,7 @@
             android:layout_weight="1"
             tools:text="1" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_2"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -26,7 +26,7 @@
             android:layout_weight="1"
             tools:text="2" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_3"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_4"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -49,7 +49,7 @@
             android:layout_weight="1"
             tools:text="4" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_5"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -57,7 +57,7 @@
             android:layout_weight="1"
             tools:text="5" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_6"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_7"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -80,7 +80,7 @@
             android:layout_weight="1"
             tools:text="7" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_8"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -88,7 +88,7 @@
             android:layout_weight="1"
             tools:text="8" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_9"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/timer_setup_digit_0"
             style="@style/Hpv.Widget.Button.TimerSetupDigit"
             android:layout_width="0dp"
