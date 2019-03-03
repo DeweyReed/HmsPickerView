@@ -4,7 +4,7 @@
 
 A beautiful little Android view to pick hours, minutes, seconds.
 
-<img src="./images/image.webp" alt="Screenshot" style="width:256px;"/>
+<img src="./images/image.webp" alt="Screenshot" width=256px/>
 
 ## Installation
 
