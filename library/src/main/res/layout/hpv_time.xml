@@ -33,7 +33,7 @@
         android:includeFontPadding="false"
         android:singleLine="true"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="36sp"
+        android:textSize="40sp"
         tools:targetApi="21"
         tools:text="12h34m56s" />
 

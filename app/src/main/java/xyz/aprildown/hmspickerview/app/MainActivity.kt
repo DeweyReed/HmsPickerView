@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         btnDialog.setOnClickListener {
             val dialog = AlertDialog.Builder(this)
-                .setTitle("HmsPickerView")
                 .setView(R.layout.layout_picker)
                 .setPositiveButton(android.R.string.ok, null)
                 .setNegativeButton(android.R.string.cancel, null)
