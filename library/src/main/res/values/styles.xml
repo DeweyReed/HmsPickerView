@@ -13,6 +13,7 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:minWidth">96dp</item>
         <item name="android:paddingTop">@dimen/hpv_digit_padding</item>
         <item name="android:paddingBottom">@dimen/hpv_digit_padding</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
