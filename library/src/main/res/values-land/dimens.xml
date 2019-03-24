@@ -4,4 +4,6 @@
 
     <dimen name="hpv_digit_font_size">24sp</dimen>
     <dimen name="hpv_digit_padding">8dp</dimen>
+
+    <dimen name="hpv_digit_time_size">32sp</dimen>
 </resources>
