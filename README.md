@@ -4,8 +4,8 @@
 
 A beautiful little Android view to pick hours, minutes and seconds.
 
-<img src="images/port.webp" alt="Port" width="360px" />
-<img src="images/land.webp" alt="Land" width="720px" />
+<img src="images/port.webp" alt="Port" width="300px" />
+<img src="images/land.webp" alt="Land" width="600px" />
 
 ## Installation
 
