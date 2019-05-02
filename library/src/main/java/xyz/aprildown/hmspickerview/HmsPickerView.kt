@@ -74,7 +74,7 @@ class HmsPickerView(
     private val hasValidInput: Boolean
         get() = inputPointer != -1
 
-    private var listener: HmsPickerView.Listener? = null
+    private var listener: Listener? = null
 
     init {
         val bf = BidiFormatter.getInstance(false /* rtlContext */)
@@ -321,7 +321,7 @@ class HmsPickerView(
     /**
      * Set a listener to listen if the [HmsPickerView] has or loses a valid input.
      */
-    fun setListener(l: HmsPickerView.Listener) {
+    fun setListener(l: Listener) {
         listener = l
     }
 

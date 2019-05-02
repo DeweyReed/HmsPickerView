@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Hpv" />
-
     <style name="Hpv.ThemeOverlay.Control.Accent" parent="ThemeOverlay.AppCompat">
         <!-- Attributes from android.support.v7.appcompat -->
         <item name="colorControlActivated">?attr/colorAccent</item>
