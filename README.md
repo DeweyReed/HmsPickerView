@@ -1,4 +1,5 @@
-[![](https://jitpack.io/v/xyz.aprildown/HmsPickerView.svg)](https://jitpack.io/#xyz.aprildown/HmsPickerView)
+[![JitPack](https://jitpack.io/v/xyz.aprildown/HmsPickerView.svg)](https://jitpack.io/#xyz.aprildown/HmsPickerView)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-HmsPickerView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7644 )
 
 # HmsPickerView
 
