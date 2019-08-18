@@ -44,7 +44,7 @@ In the XML:
 
 ```XML
 <attr name="hpv_time_text_size" format="dimension" />
-<!--default: 44sp port, 32sp land-->
+<!--default: 40sp port, 32sp land-->
 <attr name="hpv_digit_text_size" format="dimension" />
 <!--default: 40sp port, 24sp land-->
 ```
