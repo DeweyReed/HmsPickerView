@@ -42,6 +42,13 @@ In the XML:
     android:layout_height="wrap_content" />
 ```
 
+```XML
+<attr name="hpv_time_text_size" format="dimension" />
+<!--default: 44sp port, 32sp land-->
+<attr name="hpv_digit_text_size" format="dimension" />
+<!--default: 40sp port, 24sp land-->
+```
+
 In the code:
 
 ```Kotlin
@@ -56,6 +63,9 @@ fun setSeconds(seconds: Int)
 
 fun getTimeInMillis(): Long
 fun setTimeInMillis(time: Long)
+
+fun setTimeTextSize(@Px textSize: Int)
+fun setDigitTextSize(@Px textSize: Int)
 
 fun setListener(l: HmsPickerView.Listener)
 interface Listener {
