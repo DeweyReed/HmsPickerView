@@ -8,5 +8,5 @@
     <dimen name="hpv_digit_font_size">40sp</dimen>
     <dimen name="hpv_digit_padding">16dp</dimen>
 
-    <dimen name="hpv_digit_time_size">40sp</dimen>
+    <dimen name="hpv_digit_time_size">44sp</dimen>
 </resources>
