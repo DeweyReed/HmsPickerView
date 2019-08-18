@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="HmsPickerView" tools:ignore="ResourceName">
+        <attr name="hpv_time_text_size" format="dimension" />
+        <attr name="hpv_digit_text_size" format="dimension" />
+    </declare-styleable>
+</resources>

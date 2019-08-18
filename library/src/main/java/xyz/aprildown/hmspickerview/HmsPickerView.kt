@@ -28,15 +28,17 @@ import android.text.TextUtils
 import android.text.format.DateUtils
 import android.text.style.RelativeSizeSpan
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.IdRes
+import androidx.annotation.Px
 import androidx.core.view.ViewCompat
 import androidx.customview.view.AbsSavedState
-import java.util.*
+import java.util.Arrays
 
 /**
  * A custom view to pick hours, minutes and seconds.
@@ -142,6 +144,23 @@ class HmsPickerView(
 
         updateTime()
         updateDeleteAndDivider()
+
+        context.theme.obtainStyledAttributes(attrs, R.styleable.HmsPickerView, 0, 0).apply {
+            try {
+                getDimensionPixelOffset(R.styleable.HmsPickerView_hpv_time_text_size, 0).let {
+                    if (it != 0) {
+                        setTimeTextSize(it)
+                    }
+                }
+                getDimensionPixelOffset(R.styleable.HmsPickerView_hpv_digit_text_size, 0).let {
+                    if (it != 0) {
+                        setDigitTextSize(it)
+                    }
+                }
+            } finally {
+                recycle()
+            }
+        }
     }
 
     private fun getDigitForId(@IdRes id: Int): Int = when (id) {
@@ -157,7 +176,6 @@ class HmsPickerView(
         R.id.timer_setup_digit_9 -> 9
         else -> throw IllegalArgumentException("Invalid id: $id")
     }
-
 
     private fun updateTime() {
         val seconds = input[1] * 10 + input[0]
@@ -415,6 +433,17 @@ class HmsPickerView(
 
         updateTime()
         updateDeleteAndDivider()
+    }
+
+    fun setTimeTextSize(@Px textSize: Int) {
+        timeView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
+    }
+
+    fun setDigitTextSize(@Px textSize: Int) {
+        val textSizeF = textSize.toFloat()
+        digitViews.forEach {
+            it.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizeF)
+        }
     }
 
     private class SavedState : AbsSavedState {
