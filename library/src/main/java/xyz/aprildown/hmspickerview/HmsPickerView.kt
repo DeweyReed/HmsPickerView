@@ -28,6 +28,7 @@ import android.text.TextUtils
 import android.text.format.DateUtils
 import android.text.style.RelativeSizeSpan
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -61,6 +62,12 @@ class HmsPickerView(
          * This methods can be used to prevent user from going forward(such as disabling "next" button).
          */
         fun onHmsPickerViewHasNoInput(hmsPickerView: HmsPickerView)
+
+        /**
+         * Indicates [HmsPickerView] that input changed
+         * This method returns new time in milliseconds including when time is 0:00:0
+         */
+        fun onHmsPickerViewInputChanged(hmsPickerView: HmsPickerView, input: Long)
     }
 
     private val input = intArrayOf(0, 0, 0, 0, 0, 0)
@@ -271,9 +278,10 @@ class HmsPickerView(
             getFormattedNumber(digit)
         )
 
+        listener?.onHmsPickerViewInputChanged(this, getTimeInMillis())
         // Update the fab, delete, and divider when we have valid input.
         if (inputPointer == 0) {
-            notifyNoInput()
+            listener?.onHmsPickerViewHasValidInput(this)
             updateDeleteAndDivider()
         }
     }
@@ -299,6 +307,7 @@ class HmsPickerView(
             deleteView.contentDescription = context.getString(R.string.hpv_delete)
         }
 
+        listener?.onHmsPickerViewInputChanged(this, getTimeInMillis())
         // Update the fab, delete, and divider when we no longer have valid input.
         if (inputPointer == -1) {
             notifyNoInput()
