@@ -28,7 +28,6 @@ import android.text.TextUtils
 import android.text.format.DateUtils
 import android.text.style.RelativeSizeSpan
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -39,7 +38,7 @@ import androidx.annotation.IdRes
 import androidx.annotation.Px
 import androidx.core.view.ViewCompat
 import androidx.customview.view.AbsSavedState
-import java.util.Arrays
+import java.util.*
 
 /**
  * A custom view to pick hours, minutes and seconds.
