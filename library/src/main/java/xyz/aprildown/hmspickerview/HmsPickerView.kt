@@ -38,7 +38,7 @@ import androidx.annotation.IdRes
 import androidx.annotation.Px
 import androidx.core.view.ViewCompat
 import androidx.customview.view.AbsSavedState
-import java.util.Arrays
+import java.util.*
 
 /**
  * A custom view to pick hours, minutes and seconds.
@@ -61,6 +61,12 @@ class HmsPickerView(
          * This methods can be used to prevent user from going forward(such as disabling "next" button).
          */
         fun onHmsPickerViewHasNoInput(hmsPickerView: HmsPickerView)
+
+        /**
+         * Indicates [HmsPickerView] that input changed
+         * This method returns new time in milliseconds including when time is 0:00:0
+         */
+        fun onHmsPickerViewInputChanged(hmsPickerView: HmsPickerView, input: Long)
     }
 
     private val input = intArrayOf(0, 0, 0, 0, 0, 0)
@@ -271,9 +277,10 @@ class HmsPickerView(
             getFormattedNumber(digit)
         )
 
+        listener?.onHmsPickerViewInputChanged(this, getTimeInMillis())
         // Update the fab, delete, and divider when we have valid input.
         if (inputPointer == 0) {
-            notifyNoInput()
+            listener?.onHmsPickerViewHasValidInput(this)
             updateDeleteAndDivider()
         }
     }
@@ -299,6 +306,7 @@ class HmsPickerView(
             deleteView.contentDescription = context.getString(R.string.hpv_delete)
         }
 
+        listener?.onHmsPickerViewInputChanged(this, getTimeInMillis())
         // Update the fab, delete, and divider when we no longer have valid input.
         if (inputPointer == -1) {
             notifyNoInput()
