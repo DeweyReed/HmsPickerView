@@ -44,7 +44,7 @@ import java.util.Arrays
  * A custom view to pick hours, minutes and seconds.
  * Inspired by and optimized from AOSP DeskClock com.android.deskclock.timer.TimerSetupView.
  */
-class HmsPickerView(
+class HmsPickerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : LinearLayout(context, attrs), View.OnClickListener, View.OnLongClickListener {
