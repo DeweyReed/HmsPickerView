@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import xyz.aprildown.hmspickerview.HmsPickerView
 
@@ -26,8 +27,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnDialog.setOnClickListener {
-            val dialog = AlertDialog.Builder(this)
+            val dialog = MaterialAlertDialogBuilder(this)
                 .setView(R.layout.layout_picker)
+                // Because the picker is long, remove vertical insets to make sure the view not get clipped.
+                .setBackgroundInsetBottom(0)
+                .setBackgroundInsetTop(0)
                 .setPositiveButton(android.R.string.ok, null)
                 .setNegativeButton(android.R.string.cancel, null)
                 .show()
