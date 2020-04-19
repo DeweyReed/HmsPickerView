@@ -38,7 +38,7 @@ import androidx.annotation.IdRes
 import androidx.annotation.Px
 import androidx.core.view.ViewCompat
 import androidx.customview.view.AbsSavedState
-import java.util.*
+import java.util.Arrays
 
 /**
  * A custom view to pick hours, minutes and seconds.
@@ -67,6 +67,12 @@ class HmsPickerView(
          * This method returns new time in milliseconds including when time is 0:00:0
          */
         fun onHmsPickerViewInputChanged(hmsPickerView: HmsPickerView, input: Long)
+    }
+
+    abstract class SimpleListener : Listener {
+        override fun onHmsPickerViewHasValidInput(hmsPickerView: HmsPickerView) = Unit
+        override fun onHmsPickerViewHasNoInput(hmsPickerView: HmsPickerView) = Unit
+        override fun onHmsPickerViewInputChanged(hmsPickerView: HmsPickerView, input: Long) = Unit
     }
 
     private val input = intArrayOf(0, 0, 0, 0, 0, 0)
@@ -375,8 +381,8 @@ class HmsPickerView(
      */
     fun getTimeInMillis(): Long =
         getSeconds() * DateUtils.SECOND_IN_MILLIS +
-                getMinutes() * DateUtils.MINUTE_IN_MILLIS +
-                getHours() * DateUtils.HOUR_IN_MILLIS
+            getMinutes() * DateUtils.MINUTE_IN_MILLIS +
+            getHours() * DateUtils.HOUR_IN_MILLIS
 
     /**
      * Set current hours. Minutes and seconds stay the same.
@@ -384,8 +390,8 @@ class HmsPickerView(
     fun setHours(hours: Int) {
         setTimeInMillis(
             getSeconds() * DateUtils.SECOND_IN_MILLIS +
-                    getMinutes() * DateUtils.MINUTE_IN_MILLIS +
-                    hours * DateUtils.HOUR_IN_MILLIS
+                getMinutes() * DateUtils.MINUTE_IN_MILLIS +
+                hours * DateUtils.HOUR_IN_MILLIS
         )
     }
 
@@ -395,8 +401,8 @@ class HmsPickerView(
     fun setMinutes(minutes: Int) {
         setTimeInMillis(
             getSeconds() * DateUtils.SECOND_IN_MILLIS +
-                    minutes * DateUtils.MINUTE_IN_MILLIS +
-                    getHours() * DateUtils.HOUR_IN_MILLIS
+                minutes * DateUtils.MINUTE_IN_MILLIS +
+                getHours() * DateUtils.HOUR_IN_MILLIS
         )
     }
 
@@ -406,8 +412,8 @@ class HmsPickerView(
     fun setSeconds(seconds: Int) {
         setTimeInMillis(
             seconds * DateUtils.SECOND_IN_MILLIS +
-                    getMinutes() * DateUtils.MINUTE_IN_MILLIS +
-                    getHours() * DateUtils.HOUR_IN_MILLIS
+                getMinutes() * DateUtils.MINUTE_IN_MILLIS +
+                getHours() * DateUtils.HOUR_IN_MILLIS
         )
     }
 
