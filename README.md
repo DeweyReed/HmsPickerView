@@ -1,4 +1,4 @@
-[![JitPack](https://jitpack.io/v/xyz.aprildown/HmsPickerView.svg)](https://jitpack.io/#xyz.aprildown/HmsPickerView)
+[![JitPack](https://jitpack.io/v/DeweyReed/HmsPickerView.svg)](https://jitpack.io/#DeweyReed/HmsPickerView)
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-HmsPickerView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7644 )
 
 # HmsPickerView
@@ -25,11 +25,11 @@ Step 2. Add the dependency
 
 ```Groovy
 dependencies {
-    implementation "xyz.aprildown:HmsPickerView:${version}"
+    implementation "com.github.DeweyReed:HmsPickerView:${version}"
 }
 ```
 
-[![](https://jitpack.io/v/xyz.aprildown/HmsPickerView.svg)](https://jitpack.io/#xyz.aprildown/HmsPickerView)
+[![](https://jitpack.io/v/DeweyReed/HmsPickerView.svg)](https://jitpack.io/#DeweyReed/HmsPickerView)
 
 ## Usage
 
